@@ -15,12 +15,14 @@ export default class ListPresenter {
 
   init() {
     render(new SortView(), this.boardContainer.firstElementChild, RenderPosition.AFTEREND);
-    render(this.tripEventsList, this.boardContainer);
-    render(new EditPointView(), this.tripEventsList.getElement());
-    render(new AddNewPointView(), this.tripEventsList.getElement());
+
+
+    render(this.tripListComponent, this.boardContainer);
+    render(new EditPointView(), this.tripListComponent.getElement());
+    render(new AddNewPointView(), this.tripListComponent.getElement());
 
     for (let i = 0; i < 3; i++) {
-      render(new PointView(), this.tripEventsList.getElement());
+      render(new PointView(), this.tripListComponent.getElement());
     }
   }
 }
